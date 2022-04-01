@@ -11,13 +11,10 @@ class CartsTest < ApplicationSystemTestCase
   end
 
   test "creating a Cart" do
-    visit carts_url
-    click_on "New Cart"
+    visit store_index_url
+    click_on "Add to Cart", match: :first
 
-    click_on "Create Cart"
-
-    assert_text "Cart was successfully created"
-    click_on "Back"
+    assert_text "Your Cart"
   end
 
   test "updating a Cart" do
